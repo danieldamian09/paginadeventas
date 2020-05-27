@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 
-body {}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 
 .contenedor {
     padding: 60px 0px;
@@ -12,6 +14,7 @@ body {}
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
+    border: 1px solid #000000;
 
 }
 
@@ -30,7 +33,7 @@ header {
     position: relative;
     background: #8E2DE2;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(260, 100%, 44%, 0.671), hsla(272, 76%, 53%, 0.671));
+    background: -webkit-linear-gradient(to right, hsla(260, 100%, 44%, 0.671), hsla(272, 76%, 53%, 0.671)), url(img/portada.jpg);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, hsla(260, 100%, 44%, 0.671), hsla(272, 76%, 53%, 0.671)), url(img/portada.jpg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -63,6 +66,7 @@ header .textos-header {
     text-align: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 
 }
 
@@ -85,6 +89,11 @@ header .textos-header {
 
 /* sobre nosotros */
 
+main .sobre-nosotros{
+    padding: 30px 0 60px 0;
+}
+
+
 .contenedor-sobre-nosotros {
     display: flex;
     justify-content: space-evenly;
@@ -97,7 +106,7 @@ header .textos-header {
 }
 
 .sobre-nosotros .contenido-textos {
-    width: 50%;
+    width: 48%;
 
 }
 
@@ -120,7 +129,8 @@ header .textos-header {
 }
 
 .contenido-textos p {
-    padding: 0 0 30px 15px;
+    padding: 0 15px 30px 15px;
+    /* cambie el padding para que se ajuste al div contenedor */
     font-weight: 300;
     text-align: justify;
 
@@ -142,7 +152,7 @@ header .textos-header {
 }
 
 .imagen-portafolio {
-    width: 22%;
+    width: 24%;
     height: 200px;
     margin-bottom: 10px;
     overflow: hidden;
@@ -151,7 +161,7 @@ header .textos-header {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
 }
 
-.imagen-portafolio img {
+.imagen-portafolio>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -232,7 +242,7 @@ header .textos-header {
 
 .nuestros-servicios {
     background: #f2f2f2;
-    padding-top: 30px;
+
 }
 
 .servicios-contenedor {
@@ -268,7 +278,7 @@ footer {
     overflow: hidden;
 }
 
-footer h2{
+footer h2 {
     text-align: center;
     color: #9e9797;
     font-size: 24px;
@@ -296,7 +306,163 @@ footer h2{
     margin-bottom: 10px;
 }
 
-.content-foop{
+.content-foop {
     color: #ccc;
 }
 
+@media screen and (max-width:900px) {
+    header {
+        background-position: center;
+    }
+
+    .contenedor {
+        margin: auto;
+        max-width: 90%;
+    }
+
+    .contenedor-sobre-nosotros {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .sobre-nosotros .contenido-textos {
+        width: 70%;
+
+
+    }
+
+    .imagen-sobre-nosotros {
+        width: 70%;
+        margin-bottom: 20px;
+
+    }
+
+    /* Galeria */
+
+
+
+    .imagen-portafolio {
+        width: 44%;
+        height: 100%;
+    }
+
+    /* clientes */
+
+    .cartas{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cartas .carta{
+        width: 70%;
+    }
+
+    .cartas .carta:first-child{
+        margin-bottom: 30px;
+    }
+
+    /* servicios */
+
+    .servicios-contenedor{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .servicio-ind{
+        width: 80%;
+        text-align: center;
+    }
+
+    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+        margin-bottom: 60px;
+    }
+
+    .servicio-ind img{
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width:500px){
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    .contenedor{
+        margin: auto;
+        height: 90%;
+    }
+
+    /* sobre nosotros */
+
+    .imagen-sobre-nosotros{
+        margin-bottom: 60px;
+        width: 70%;
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 80%;
+    }
+
+    /* galeria */
+
+    .imagen-portafolio{
+        width: 95%;
+    }
+
+    /* clientes */
+
+    .cartas .carta{
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cartas .carta img{
+        width: 90px;
+        height: 90px;
+    }
+
+    /* footer */
+
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4{
+        border: none;
+    }
+
+    .content-foo p{
+        color: #ffffff;
+        border-bottom:  1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+
+    footer h2{
+        font-size: 20px;
+    }
+}
