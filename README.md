@@ -1,2 +1,3 @@
 # paginadeventas
-Proyecto Pagina De Ventas
+
+Proyecto Pagina De Ventas con HTML y CSS
